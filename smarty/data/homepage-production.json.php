@@ -1,7 +1,7 @@
 <?php
 $json = <<< JSON
 {
-    "Productions": [
+    "productions": [
         {
             "name":"Platonov",
             "shortDescription" : "A new, live cinema adaptation of Chekhov’s first full-length play chronicling an emotionally bankrupt society.<br /><br /><strong>Tickets: $25</strong>",
@@ -25,17 +25,18 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl": "platonov"
         },
         
-         {
+        {
             "name":"100% San Diego",
             "shortDescription" : "A customized, reality-based piece in which San Diego County’s population is represented on stage by 100 San Diegans.<br /><br /><strong>Tickets: $15</strong>",
             "img_src":"img/productions/homepage-thumbs/100sandiego.jpg",
             "venue":"Festival Village, Forum Theatre",
             "buttons":[{
-               "label":"BUY TICKETS", 
-			   "type":"btn",
+                "label":"BUY TICKETS", 
+			    "type":"btn",
                 "href":"http://wowfestival.lajollaplayhouse.org/single/psDetail.aspx?psn=7512",
                 "target":"_self"
             },{
@@ -51,17 +52,18 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"100sd"
         },
         
-         {
+        {
             "name":"The Car Plays: San Diego",
             "shortDescription" : "Back by popular demand after a sold-out run in Spring 2012, <i>The Car Plays: San Diego</i> are intimate ten-minute plays, each taking place in a car.<br /><br /><strong>Tickets: $25</strong>",
             "img_src":"img/productions/homepage-thumbs/carplays.jpg",
             "venue":"Festival Village, Valet Lane",
             "buttons":[{
-              "label":"BUY TICKETS", 
-			   "type":"btn",
+                "label":"BUY TICKETS", 
+			    "type":"btn",
                 "href":"http://wowfestival.lajollaplayhouse.org/single/psDetail.aspx?psn=7493",
                 "target":"_self"
             },{
@@ -77,10 +79,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"car-plays"
         },
         
-         {
+        {
             "name":"We Built This City",
             "shortDescription" : "An interactive play space for families which celebrates absolute simplicity and the power of children’s imaginations.<br /><br /><strong>Tickets: $5</strong>",
             "img_src":"img/productions/homepage-thumbs/webuiltcity.jpg",
@@ -92,7 +95,7 @@ $json = <<< JSON
                 "target":"_self"
             },{
                 "label":"LEARN MORE", 
-                "type":"btn-learn-more btn",
+                "type":"btn-learn-more btn", 
                 "href":"productions/wbtc",
                 "target":"_self"
             }
@@ -103,17 +106,18 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"wbtc"
         },
         
-                 {
+        {
             "name":"Our Town",
             "shortDescription" : "Thornton Wilder's classic is faithfully re-imagined as an intimate backyard gathering with live, original music and all the free soda-pop you can drink.<br /><br /><strong>Tickets: $25</strong>",
             "img_src":"img/productions/homepage-thumbs/ourtown.jpg",
             "venue":"Festival Village, Rear of the Forum Theatre",
             "buttons":[{
                 "label":"BUY TICKETS", 
-			   "type":"btn",
+			    "type":"btn",
                 "href":"http://wowfestival.lajollaplayhouse.org/single/psDetail.aspx?psn=7528",
                 "target":"_self"
             },{
@@ -129,10 +133,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"our-town"
         },
         
-         {
+        {
             "name":"Seafoam Sleepwalk",
             "shortDescription" : "A performance of specially-constructed puppets enchant and invite us to dream awake before they return from whence they came.<br /><br /><strong>FREE</strong>",
             "img_src":"img/productions/homepage-thumbs/seafoam.jpg",
@@ -150,7 +155,8 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"seafoam-sleepwalk"
         },
         
         {
@@ -159,7 +165,7 @@ $json = <<< JSON
             "img_src":"img/productions/homepage-thumbs/kamchatka.jpg",
             "venue":"Festival Village and various other San Diego locations",
             "buttons":[{
-               "label":"LEARN MORE", 
+                "label":"LEARN MORE", 
                 "type":"btn-learn-more btn",
                 "href":"productions/kamchatka",
                 "target":"_self"
@@ -171,10 +177,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"kamchatka"
         },
-        
-         {
+
+        {
             "name":"Counterweight: An Elevator Love Play",
             "shortDescription" : "Take a ride on Betty Jean’s elevator, where she’ll offer up voyeuristic peeks into three couples’ stories across three different floors.<br /><br /><strong>Tickets: $15</strong> ",
             "img_src":"img/productions/homepage-thumbs/counterweight.jpg",
@@ -197,10 +204,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"counterweight"
         },
         
-                 {
+        {
             "name":"Carpe Minuta Prima",
             "shortDescription" : "This acclaimed installation playfully explores themes of economy, the value of our time and what it means to sign away your soul. <br /><br /><strong>FREE</strong>",
             "img_src":"img/productions/homepage-thumbs/carpe.jpg",
@@ -218,10 +226,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ljp"
+            "company": "ljp",
+            "customUrl":"carpe-minuta"
         },
         
-         {
+        {
             "name":"Cornerstone",
             "shortDescription" : "A short play in which the audience becomes engineers working at The Central Facilities Plant located at the Center of Civilization.<br /><br /><strong>Tickets: $15</strong>",
             "img_src":"img/productions/homepage-thumbs/cornerstone.jpg",
@@ -244,10 +253,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"cornerstone"
         },
         
-         {
+        {
             "name":"Hedda'ing",
             "shortDescription" : "A cross cultural, dance theatre exploration investigates the polarities that exist between the role of home as a sanctuary and as a prison.<br /><br /><strong>Tickets: $15</strong>",
             "img_src":"img/productions/homepage-thumbs/hedding.jpg",
@@ -270,10 +280,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"heddaing"
         },
         
-         {
+        {
             "name":"La Perfezione di uno spirito sottile",
             "shortDescription" : "A ritual of music to be performed in the open, in the vicinity of precipices, cliffs, strange rock formations or boundless upland plains.<br /><br /><strong>Tickets: $15</strong>",
             "img_src":"img/productions/homepage-thumbs/LaPerfezione.jpg",
@@ -294,7 +305,8 @@ $json = <<< JSON
                         "2012-10-4",
                         "2012-10-5"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"la-perfezione"
         },
         
         {
@@ -315,10 +327,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"myth-project"
         },
         
-            {
+        {
             "name":"PAUSE (for world creation)",
             "shortDescription" : "This generative dance theatre experience brings artists and audiences together on a real-time journey into our collective imagination.<br /><br /><strong>Tickets: $25</strong> ",
             "img_src":"img/productions/homepage-thumbs/pause.jpg",
@@ -340,7 +353,8 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"pause"
         },
         
         {
@@ -364,21 +378,22 @@ $json = <<< JSON
                         "2012-10-4",
                         "2012-10-5"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"star"
         },
           
-           {
+        {
             "name":"A Willow Grows Aslant",
             "shortDescription" : "An immersive, ambulatory experience, the labyrinthine corridors of Galbraith Hall’s basement will transform uniquely for each audience member.<br /><br /><strong>Tickets: $15</strong>",
             "img_src":"img/productions/homepage-thumbs/willow.jpg",
             "venue":"UCSD, Galbraith Hall Basement  ",
             "buttons":[{
                 "label":"BUY TICKETS", 
-			   "type":"btn",
+                "type":"btn",
                 "href":"http://wowfestival.lajollaplayhouse.org/single/psDetail.aspx?psn=7596",
                 "target":"_self"
             },{
-               "label":"LEARN MORE", 
+                "label":"LEARN MORE", 
                 "type":"btn-learn-more btn",
                 "href":"productions/willow",
                 "target":"_self"
@@ -389,10 +404,11 @@ $json = <<< JSON
                         "2012-10-5",
                         "2012-10-6"
                     ],
-            "company": "ucsd"
+            "company": "ucsd",
+            "customUrl":"willow"
         },
 
- {
+        {
             "name":"Futuristic Retro Ritual",
             "shortDescription" : "Celebrated performance and conceptual artist James Luna takes up the iconic image of the American Indian storyteller.<br /><br /><strong>FREE</strong> ",
             "img_src":"img/productions/homepage-thumbs/futuristic.jpg",
@@ -408,7 +424,8 @@ $json = <<< JSON
                         "2012-10-3",
                         "2012-10-5"
                     ],
-            "company": "moca"
+            "company": "moca",
+            "customUrl":"futuristic"
         },
         
         {
@@ -427,10 +444,11 @@ $json = <<< JSON
                         "2012-10-3",
                         "2012-10-6"
                     ],
-            "company": "moca"
+            "company": "moca",
+            "customUrl":"off-the-old-block"
         },
         
-                 {
+        {
             "name":"Orifice II",
             "shortDescription" : "In this site-specific, performative video installation, Satterwhite performs as one of the avatars that appear in his 3-D computer animations.<br /><br /><strong>FREE</strong>",
             "img_src":"img/productions/homepage-thumbs/orificell.jpg",
@@ -446,10 +464,11 @@ $json = <<< JSON
                         "2012-10-3",
                         "2012-10-4"
                     ],
-            "company": "moca"
+            "company": "moca",
+            "customUrl":"orifice"
         },
                 
-                 {
+        {
             "name":"Thursday Night Thing",
             "shortDescription" : "MCASD’s wildly acclaimed TNT (Thursday Night Thing) is kicking off the La Jolla Playhouse’s Without Walls festival.<br /><br /><strong>Tickets: $10</strong>",
             "img_src":"img/productions/homepage-thumbs/tnt.jpg",
@@ -469,7 +488,8 @@ $json = <<< JSON
             "dates": [
                         "2012-10-3"
                     ],
-            "company": "moca"
+            "company": "moca",
+            "customUrl":"tnt"
         }
               
     ]

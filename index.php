@@ -13,41 +13,51 @@ $smarty->setTemplateDir(MY_PHP_ROOT . "/smarty/templates");
 $smarty->setCompileDir(MY_PHP_ROOT . "/smarty/templates_c");
 //Create this directory if this does not exist
 $smarty->setCacheDir(MY_PHP_ROOT . "/smarty/cache");
+$smarty->caching = true;
 //http://www.smarty.net/docs/en/config.files.tpl
 $smarty->setConfigDir(MY_PHP_ROOT . "/smarty/configs");
 //http://www.smarty.net/docs/en/plugins
 $smarty->setPluginsDir(MY_PHP_ROOT . "/smarty/smarty_plugins");
 
+const DATA_PATH = './smarty/data/';
+
 $template = null;
-$action = null;
+$action = safeGetString("action");
+$actionStrings = explode('/', $action);
 $params = array();
 $params["baseurl"] = "./";
 
-$action = safeGetString("action");
-$params = array();
-$params["baseurl"] = "./";
-switch ($action) {
+switch ($actionStrings[0]) {
     case "":
         // Load production data        
-        require("banners.json.php");
-        $banners = json_decode($banners_json, TRUE);
-        $params["banners"] = processData($banners);
+        $params["banners"] = getData("banners.json.php");
+        $params["productions"] = getData("homepage-production.json.php");
         $template = "index.tpl";
         break;
+    case "productions":
+        $productions = getData("homepage-production.json.php")['productions'];
+        $params["production"] = findProduction($productions, $actionStrings[1]);
+        $params["relatedProductions"] = getCompanyProductions($productions, $params["production"]["company"] ?? null, 3);
+        $params["baseurl"] .= "../";
+        $template = "pages/productions.tpl";
+        break;
+    case "about":   
+        $params["employees"] = getData("employees.json.php")['employees'];
+        $params["baseurl"] .= "../";
+        $template = "pages/about.tpl";
+        break;
     default:
-        if ($template == null) $template = $action . ".tpl";
+        if ($template == null) $template = "pages/" . $action . ".tpl";
 
-        $templatePath = $smarty->getTemplateDir();
+        $templatePath = $smarty->getTemplateDir(); 
         if (!file_exists($templatePath[0] . $template)) {
-            $template = "index.tpl";
-        }
-        $num_of_slashes = substr_count($action, "/");
-        if ($num_of_slashes > 0) {
-            for ($i = 0; $i < $num_of_slashes; $i++) {
-                $params["baseurl"] .= "../";
-            }
+            header('Location: /');
         }
 
+        $num_of_slashes = substr_count($action, "/");
+        for ($i = 0; $i <= $num_of_slashes; $i++) {
+            $params["baseurl"] .= "../";
+        }
         break;
 }
 
@@ -73,8 +83,18 @@ function safeGetString($name, $default = NULL)
         $result = strval($_POST[$name]);
     }
     $result = str_replace(chr(13), '', $result);
+
     return $result;
 }
+
+function getData($fileName, $varName = 'json', $defaultPath = DATA_PATH)
+{
+    require($defaultPath . $fileName);
+    $data = json_decode($$varName, TRUE);
+    
+    return processData($data);
+}
+
 function processData($data)
 {
     foreach ($data as $key => $val) {
@@ -82,5 +102,34 @@ function processData($data)
             $data[$key] = processData($val);
         }
     }
+
     return $data;
+}
+
+function findProduction(&$productions, $url)
+{
+    foreach($productions as $key => $production) {
+        if (isset($production["customUrl"]) && $production["customUrl"] === $url) {
+            unset($productions[$key]);
+
+            return $production;
+        }
+    }
+
+    return null;
+}
+
+function getCompanyProductions($productions, $company, $limit)
+{
+    shuffle($productions);
+    $productions = array_values($productions);
+    $companyProductions = [];
+    for ($i = 0; $i < count($productions) && count($companyProductions) < $limit; $i++) {
+        $production = $productions[$i];
+        if (isset($production['company']) && $production['company'] === $company) {
+            $companyProductions[] = $production;
+        }
+    }
+
+    return $companyProductions;
 }
